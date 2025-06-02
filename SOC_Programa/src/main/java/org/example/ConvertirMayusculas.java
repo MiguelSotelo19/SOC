@@ -5,21 +5,21 @@ import java.util.Scanner;
 public class ConvertirMayusculas {
 
     public static void ConvertirMayus(Scanner scanner) {
-        ConvertirMayusculas convertidor = new ConvertirMayusculas();
+        String texto;
+        do {
+            System.out.print("Ingresa un texto: ");
+            texto = scanner.nextLine();
 
-        System.out.print("Ingresa un texto: ");
-        String texto = scanner.nextLine();
+            if (texto.trim().isEmpty()) {
+                System.out.println("El texto no puede estar vacío.");
+            }
+        } while (texto.trim().isEmpty());
 
-        if (texto.trim().isEmpty()) {
-            System.out.println("El texto no puede estar vacío.");
-        } else {
-            convertidor.convertirAMayusculas(texto);
-        }
+        convertirAMayusculas(texto);
     }
 
-    public String convertirAMayusculas(String texto) {
+    public static void convertirAMayusculas(String texto) {
         String resultado = texto.toUpperCase();
         System.out.println("Texto en mayúsculas: " + resultado);
-        return resultado;
     }
 }

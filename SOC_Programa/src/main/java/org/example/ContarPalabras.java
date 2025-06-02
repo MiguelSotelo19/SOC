@@ -5,8 +5,15 @@ import java.util.Scanner;
 public class ContarPalabras {
 
     public static void contar(Scanner scanner) {
-        System.out.println("Escribe una frase para contar las palabras:");
-        String texto = scanner.nextLine();
+        String texto;
+
+        do {
+            System.out.println("Escribe una frase para contar las palabras:");
+            texto = scanner.nextLine();
+            if (texto.trim().isEmpty()) {
+                System.out.println("La frase no debe estar vacía.");
+            }
+        } while (texto.trim().isEmpty());
 
         int cantidad = contarPalabras(texto);
         System.out.println("Cantidad de palabras: " + cantidad);
@@ -16,7 +23,6 @@ public class ContarPalabras {
         if (texto == null || texto.trim().isEmpty()) {
             return 0;
         }
-
         return texto.trim().split("\\s+").length;
     }
 }
