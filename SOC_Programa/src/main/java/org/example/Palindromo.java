@@ -1,11 +1,14 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Palindromo {
 
-    public static void main(String[] args) {
+    public static void verificarPalindromo(Scanner scanner) {
         Palindromo palindromo = new Palindromo();
-        
-        palindromo.esPalindromo("anita lava la tina");
+
+        System.out.print("Ingresa la palabra a verificar: ");
+        palindromo.esPalindromo(scanner.nextLine());
     }
 
     public boolean esPalindromo(String palabra){

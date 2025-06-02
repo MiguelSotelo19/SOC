@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class ConvertirMayusculas {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+    public static void ConvertirMayus(Scanner scanner) {
         ConvertirMayusculas convertidor = new ConvertirMayusculas();
 
         System.out.print("Ingresa un texto: ");
@@ -16,8 +15,6 @@ public class ConvertirMayusculas {
         } else {
             convertidor.convertirAMayusculas(texto);
         }
-
-        scanner.close();
     }
 
     public String convertirAMayusculas(String texto) {

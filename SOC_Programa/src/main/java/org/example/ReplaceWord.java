@@ -4,17 +4,16 @@ import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class ReplaceWord {
-    public static void main(String[] args) {
-        Scanner lean = new Scanner(System.in);
+    public static void invertirPalabra(Scanner scanner) {
 
         System.out.println("Ingresa la cadena de texto: ");
-        String string = lean.nextLine();
+        String string = scanner.nextLine();
 
         System.out.println("Ingresa la palabra a remplazar: ");
-        String wordToReplace = lean.nextLine();
+        String wordToReplace = scanner.nextLine();
 
         System.out.println("Ingresa la palabra por la cual remplazar:");
-        String wordToPut = lean.nextLine();
+        String wordToPut = scanner.nextLine();
 
         replaceWord(string, wordToReplace,wordToPut);
     }

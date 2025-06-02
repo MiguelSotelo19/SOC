@@ -3,8 +3,7 @@ package org.example;
 import java.util.Scanner;
 
 public class TextoInvertido {
-    public void invertirTexto() {
-        Scanner scanner = new Scanner(System.in);
+    public void invertirTexto(Scanner scanner) {
 
         System.out.print("Ingresa un texto: ");
         String texto = scanner.nextLine();
@@ -15,7 +14,5 @@ public class TextoInvertido {
         }
 
         System.out.println("Texto invertido: " + textoInvertido);
-
-        scanner.close();
     }
 }
