@@ -34,6 +34,8 @@ public class Main {
                     convertidor.ConvertirMayus(scanner);
                     break;
                 case 3:
+                    ConvertidorMinusculas convMinusculas = new ConvertidorMinusculas();
+                    convMinusculas.convertir(scanner);
                     break;
                 case 4:
                     ContarPalabras palabras = new ContarPalabras();

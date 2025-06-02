@@ -1,15 +1,13 @@
+package org.example;
+
 import java.util.Scanner;
 public class ConvertidorMinusculas {
-
-    //Método que convierte un texto a minusculas
 
     public static String convertirMinusculas(String texto) {
         return texto.toLowerCase();
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void convertir(Scanner scanner) {
         System.out.println("Escribe un texto");
         String entrada = scanner.nextLine();
 
@@ -19,10 +17,6 @@ public class ConvertidorMinusculas {
             String resultado = convertirMinusculas(entrada);
             System.out.println("Texto en minusculas: " + resultado);
 
-            scanner.close();
-            
-
         }
-        
     }
 }
