@@ -5,62 +5,43 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int opc = 0;
+        int opc;
 
         do {
             System.out.println("\n\nSelecciona una de las siguientes opciones: ");
-            System.out.println("" +
-                    "1. Contar caracteres \n" +
-                    "2. Convertir a mayúsculas \n" +
-                    "3. Convertir a minúsculas \n" +
-                    "4. Contar palabras \n" +
-                    "5. Verificar palíndromo \n" +
-                    "6. Invertir texto \n" +
-                    "7. Reemplazar palabra \n" +
-                    "8. Eliminar espacios \n" +
-                    "9. Salir");
+            System.out.println("1. Contar caracteres");
+            System.out.println("2. Convertir a mayúsculas");
+            System.out.println("3. Convertir a minúsculas");
+            System.out.println("4. Contar palabras");
+            System.out.println("5. Verificar palíndromo");
+            System.out.println("6. Invertir texto");
+            System.out.println("7. Reemplazar palabra");
+            System.out.println("8. Eliminar espacios");
+            System.out.println("9. Salir");
 
-            System.out.print("Ingresa un número: ");opc = scanner.nextInt();
+            System.out.print("Ingresa un número: ");
+            while (!scanner.hasNextInt()) {
+                System.out.print("Entrada inválida. Ingresa un número válido: ");
+                scanner.next();
+            }
+
+            opc = scanner.nextInt();
             scanner.nextLine();
-            System.out.println("\n");
+            System.out.println();
 
             switch (opc) {
-                case 1:
-                    ContadorCaracteres contador = new ContadorCaracteres();
-                    contador.ContarCaracteres(scanner);
-                    break;
-                case 2:
-                    ConvertirMayusculas convertidor = new ConvertirMayusculas();
-                    convertidor.ConvertirMayus(scanner);
-                    break;
-                case 3:
-                    ConvertidorMinusculas convMinusculas = new ConvertidorMinusculas();
-                    convMinusculas.convertir(scanner);
-                    break;
-                case 4:
-                    ContarPalabras palabras = new ContarPalabras();
-                    palabras.contar(scanner);
-                    break;
-                case 5:
-                    Palindromo palindromo = new Palindromo();
-                    palindromo.verificarPalindromo(scanner);
-                    break;
-                case 6:
-                    TextoInvertido textoInvertido = new TextoInvertido();
-                    textoInvertido.invertirTexto(scanner);
-                    break;
-                case 7:
-                    ReplaceWord replaceWord = new ReplaceWord();
-                    replaceWord.invertirPalabra(scanner);
-                    break;
-                case 8:
-                    EliminarEspacios eliminarEspacios = new EliminarEspacios();
-                    eliminarEspacios.eliminar(scanner);
-                    break;
-                case 9:
-                    System.out.println("Saliendo...");
-                    break;
+                case 1 -> ContadorCaracteres.ContarCaracteres(scanner);
+                case 2 -> ConvertirMayusculas.ConvertirMayus(scanner);
+                case 3 -> ConvertidorMinusculas.convertir(scanner);
+                case 4 -> ContarPalabras.contar(scanner);
+                case 5 -> Palindromo.verificarPalindromo(scanner);
+                case 6 -> new TextoInvertido().invertirTexto(scanner);
+                case 7 -> ReplaceWord.invertirPalabra(scanner);
+                case 8 -> EliminarEspacios.eliminar(scanner);
+                case 9 -> System.out.println("Saliendo...");
+                default -> System.out.println("Opción no válida. Intenta de nuevo.");
             }
-        }while (opc != 9);
+
+        } while (opc != 9);
     }
 }

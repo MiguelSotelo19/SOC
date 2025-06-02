@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.Scanner;
+
 public class ConvertidorMinusculas {
 
     public static String convertirMinusculas(String texto) {
@@ -8,15 +9,17 @@ public class ConvertidorMinusculas {
     }
 
     public static void convertir(Scanner scanner) {
-        System.out.println("Escribe un texto");
-        String entrada = scanner.nextLine();
+        String entrada;
+        do {
+            System.out.println("Escribe un texto:");
+            entrada = scanner.nextLine();
 
-        if (entrada.trim().isEmpty()) {
-            System.out.println("Error: No se permiten cadenas vacias.");
-        } else {
-            String resultado = convertirMinusculas(entrada);
-            System.out.println("Texto en minusculas: " + resultado);
+            if (entrada.trim().isEmpty()) {
+                System.out.println("Error: No se permiten cadenas vacías.");
+            }
+        } while (entrada.trim().isEmpty());
 
-        }
+        String resultado = convertirMinusculas(entrada);
+        System.out.println("Texto en minúsculas: " + resultado);
     }
 }
